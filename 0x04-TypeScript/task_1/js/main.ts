@@ -18,9 +18,25 @@ const printTeacher: printTeacherFunction = (firstName: string, lastName: string)
     `${firstName.charAt(0)}. ${lastName}`;
 
 
-class StudentClass {
-    firstName: string;
-    lastName: string
+
+interface studentCon{
+  new (firstName: string, lastName: string): StudentClass
+
+}
+interface studentClassFace{
+  firstName: string;
+  lastName: string;
+  workOnHomework(): string;
+  displayName(): string;
+
+}
+class StudentClass implements studentClassFace {
+  firstName: string;
+  lastName: string;
+  constructor(firstName: string, lastName: string){
+    this.firstName = firstName;
+    this.lastName = lastName
+  }
     workOnHomework(){
         return "Currently working";
     }
@@ -28,14 +44,3 @@ class StudentClass {
       return this.firstName;
     }
 }
-
-const student1: Teacher = {
-  firstName: "",
-  lastName: "",
-  fullTimeEmployee: true,
-  location: "string",
-
-};
-
-console.log(student1)
-
