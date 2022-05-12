@@ -5,16 +5,16 @@ interface Student {
     location: string;
 }
 const student1: Student = {
-    firstName: "",
-    lastName: "",
+    firstName: "Luke",
+    lastName: "Skywalker",
     age: 0,
-    location: "",
+    location: "Hoth",
 };
 const student2: Student = {
-    firstName: "",
-    lastName: "",
+    firstName: "Obi-Wan",
+    lastName: "Kenobi",
     age: 0,
-    location: "",
+    location: "Tatooine",
 };;
 let studentsList: Student[] = [];
 studentsList.push(student1);
@@ -27,7 +27,7 @@ for (var i = 0; i < studentsList.length; i++) {
     const locationCell = newRow.insertCell();
 
     nameCell.innerHTML = studentsList[i].firstName;
-    locationCell.innerHTML = studentsList[i].firstName;
+    locationCell.innerHTML = studentsList[i].location;
 }
 document.body.appendChild(table);
-
+console.log("test");

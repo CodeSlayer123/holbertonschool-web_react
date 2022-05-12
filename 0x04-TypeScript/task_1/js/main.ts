@@ -44,3 +44,36 @@ class StudentClass implements studentClassFace {
       return this.firstName;
     }
 }
+
+const teacher1: Teacher = {
+  firstName: "Luke",
+  lastName: "Skywalker",
+  fullTimeEmployee: false,
+  yearsOfExperience: 12,
+  location: "string",
+  property: "string",
+};
+
+const teacher2: Teacher = {
+  firstName: "Leia",
+  lastName: "Skywalker",
+  fullTimeEmployee: true,
+  yearsOfExperience: 12,
+  location: "string",
+  property: "string",
+};
+
+let studentsList: Teacher[] = [];
+studentsList.push(teacher1);
+studentsList.push(teacher2);
+
+var table = document.createElement('table');
+for (var i = 0; i < studentsList.length; i++) {
+    const newRow = table.insertRow();
+    const nameCell = newRow.insertCell();
+    const locationCell = newRow.insertCell();
+
+    nameCell.innerHTML = studentsList[i].firstName;
+    locationCell.innerHTML = studentsList[i].location;
+}
+document.body.appendChild(table);
