@@ -2,7 +2,9 @@ var printTeacher = function (firstName, lastName) {
     return firstName.charAt(0) + ". " + lastName;
 };
 var StudentClass = /** @class */ (function () {
-    function StudentClass() {
+    function StudentClass(firstName, lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
     }
     StudentClass.prototype.workOnHomework = function () {
         return "Currently working";
@@ -12,10 +14,3 @@ var StudentClass = /** @class */ (function () {
     };
     return StudentClass;
 }());
-var student1 = {
-    firstName: "",
-    lastName: "",
-    fullTimeEmployee: true,
-    location: "string"
-};
-console.log(student1);

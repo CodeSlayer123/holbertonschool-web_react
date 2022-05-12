@@ -15,7 +15,6 @@ var studentsList = [];
 studentsList.push(student1);
 studentsList.push(student2);
 var table = document.createElement('table');
-document.body.appendChild(table);
 for (var i = 0; i < studentsList.length; i++) {
     var newRow = table.insertRow();
     var nameCell = newRow.insertCell();
@@ -23,3 +22,4 @@ for (var i = 0; i < studentsList.length; i++) {
     nameCell.innerHTML = studentsList[i].firstName;
     locationCell.innerHTML = studentsList[i].firstName;
 }
+document.body.appendChild(table);
