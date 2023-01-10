@@ -8,8 +8,8 @@ module.exports = {
     mode: "development",
     entry: {
       header: './modules/header/header.js',
-      body: './modules/header/body.js',
-      footer: './modules/header/footer.js',
+      body: './modules/body/body.js',
+      footer: './modules/footer/footer.js',
 
     },
     output: {
@@ -40,11 +40,12 @@ module.exports = {
     plugins: [
       new HtmlWebpackPlugin({
           hash: true,
-          filename: '/public/index.html' //relative to root of the application
+          filename: './public/index.html' //relative to root of the application
       }),
       new CleanWebpackPlugin()
  ],
     devtool: 'inline-source-map',
+    chunks: ["all"]
 
 
 
