@@ -7,16 +7,21 @@ module.exports = {
       filename: 'bundle.js',
       path: path.resolve(__dirname, 'public')
     },
-    rules: [
-      {
-        test: /\.css$/i,
-        use: ["file-loader", "image-webpack-loader"],
-      },
-      {
-        test: /\.(png|jpg)$/,
-        loader: 'url-loader'
-      }
-    ],
+    module: {
+      rules: [
+        {
+          test: /\.css$/i,
+          use: ["style-loader", "css-loader"],
+        },
+        {
+          test: /\.(png|jpg)$/,
+          loader: 'url-loader'
+        }
+      ],
+    },
+    
+
+    
     
   
 };
