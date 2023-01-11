@@ -2,7 +2,15 @@
     padding: 10px 10px 10px 10px;
     border: 2px;
     border-color: red;
-    height: 100px;
+    height: 150px;
     border-style: dotted;
     font-weight: bold;
+}
+
+[data-priority="default"] {
+    color: blue;
+}
+
+[data-priority="urgent"] {
+    color: red;
 }
