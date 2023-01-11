@@ -1,0 +1,27 @@
+{
+  "name": "task_5",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "start": "webpack-dev-server --mode development --config config/webpack.config.js",
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-install": "2.1.0",
+    "css-loader": "^6.7.3",
+    "enzyme": "^3.11.0",
+    "jest": "^29.3.1",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1"
+  },
+  "dependencies": {
+    "image-webpack-loader": "^8.1.0",
+    "inline-source-map": "^0.6.2",
+    "style-loader": "^3.3.1"
+  }
+}
