@@ -33,9 +33,7 @@ module.exports = {
       port: 8564,
     },
 
-    devtool: 'inline-source-map',
-    chunks: ["all"]
-
+    devtool: 'inline-source-map'
 
 
 

@@ -7,9 +7,8 @@ import { shallow } from 'enzyme';
 describe('Tests app', () => {
     describe('App renders without crashing', () => {
       it('App renders without crashing', function(){
-        const div = document.createElement('div');
-        const root = ReactDOMClient.createRoot(div);
-        root.render(<App />);
+        const wrapper = shallow(<App />);
+        assert.equal(wrapper.length, 1);
     });
     });
     describe('App renders a div with the class App-header', () => {
