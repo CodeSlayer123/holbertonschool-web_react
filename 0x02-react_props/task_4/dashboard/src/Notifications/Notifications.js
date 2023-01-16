@@ -9,7 +9,7 @@ import PropTypes from 'prop-types';
 export default function Notifications({displayDrawer}){
     return(
         <React.Fragment>
-            <div className='menuItem'>
+            <div className='menuItem' style={{'padding-left': '1700px'}}>
                 Your notifications
             </div>
             {displayDrawer ==true &&

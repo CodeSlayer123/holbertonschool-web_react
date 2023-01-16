@@ -22,14 +22,3 @@ export default class CourseList extends React.Component {
 
     }
 }
-
-CourseListRow.propTypes = {
-    isHeader: PropTypes.bool,
-    textFirstCell: PropTypes.string.isRequired,
-    textSecondCell: PropTypes.string
-};
-
-Greeting.defaultProps = {
-    isHeader: false,
-    textSecondCell: null
-};

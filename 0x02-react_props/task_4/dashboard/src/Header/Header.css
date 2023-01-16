@@ -22,4 +22,9 @@
 	display: inline;
   
   }
+
+  .menu-item{
+    color:blue !important;
+    background-color: aqua !important;
+}
   

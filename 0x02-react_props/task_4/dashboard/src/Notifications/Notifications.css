@@ -14,3 +14,7 @@
 [data-priority="urgent"] {
     color: red;
 }
+.menu-item{
+    color:blue;
+    background-color: aqua !important;
+}
