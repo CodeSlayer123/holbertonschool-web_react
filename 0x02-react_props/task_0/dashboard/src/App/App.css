@@ -1,68 +1,32 @@
 body {
-  overflow: hidden;
-} 
-
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 20vmin;
-  pointer-events: none;
-  align-self: left;
-  margin-left: -1300px;
-}
-
-
-.App-header h1{
-  display: inline;
-  margin-top: -200px !important;
-  font-size: 42px;
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-.App-header {
-  background-color: #fff;
-  display: flex;
-  align-items: center;
-  font-size: calc(10px + 2vmin);
-  color: red;
-  display: inline;
-
-}
-
-
-.App-link {
-  color: #61dafb;
-}
-
-.App-body{
-  height: 450px;
-}
-
-.App-body p{
-  padding-top: 50px;
-  padding-left: 50px;
-  text-align: left;
-}
-
-hr {
-  display: block;
-  height: 1px;
-  border: 0px;
-  border-top: 3px solid rgb(247, 13, 13);
-  margin: 1em 0;
-  padding: 0;
-}
-
-.form-1{
-  align-items: left;
-  display: inline;
-  padding-right: 1500px;
-  width: 100px;
-}
-.form-1 label{
-  align-items: left;
-  display: inline;
-  padding-right: 1500px;
-
-}
+	overflow: hidden;
+  } 
+  
+  .App {
+	text-align: center;
+  }
+  
+  
+  .App-link {
+	color: #61dafb;
+  }
+  
+  .App-body{
+	height: 450px;
+  }
+  
+  .App-body p{
+	padding-top: 50px;
+	padding-left: 50px;
+	text-align: left;
+  }
+  
+  hr {
+	display: block;
+	height: 1px;
+	border: 0px;
+	border-top: 3px solid rgb(247, 13, 13);
+	margin: 1em 0;
+	padding: 0;
+  }
+  

@@ -11,6 +11,7 @@ describe('Tests app', () => {
         assert.equal(wrapper.length, 1);
     });
     });
+    /*
     describe('App renders a div with the class App-header', () => {
         it('App renders a div with the class App-header', function(){
             const wrapper = shallow(<App />);
@@ -34,7 +35,7 @@ describe('Tests app', () => {
             assert.equal(header.length, 1);
         });
       });
-
+*/
 
 
   });

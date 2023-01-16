@@ -1,41 +1,47 @@
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-
-
 const path = require('path');
 
 module.exports = {
-    mode: "development",
-    entry: './src/index.js',
-    output: {
-      filename: 'bundle.js',
-      path: path.resolve(__dirname, '../dist')
-    },
-    module: {
-      rules: [
-        {
-          test: /\.css$/i,
-          use: ["style-loader", "css-loader", "file-loader", "image-webpack-loader"],
-        },
-        {
-          test: /\.(png|jpg)$/,
-          loader: 'babel-loader'
-        }
-      ],
-    },
-
-    devServer: {
-      static: {
-        directory: path.join(__dirname, '../dist'),
+  mode: 'development',
+  entry: './src/index.js',
+  output: {
+    path: path.resolve(__dirname, '../dist'),
+    filename: 'bundle.js',
+  },
+  devServer: {
+    static: path.resolve(__dirname, '../dist'),
+    hot: true,
+    compress: true,
+  },
+  devtool: 'inline-source-map',
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
       },
-      hot: true,
-      compress: true,
-      port: 8564,
-    },
-
-    devtool: 'inline-source-map'
-
-
-
-
+      {
+        test: /\.(jpe?g|png|gif|svg)$/,
+        use: [
+          'file-loader',
+          {
+            loader: 'image-webpack-loader',
+            options: {
+              bypassOnDebug: true,
+              disable: true,
+            },
+          },
+        ],
+      },
+      {
+        test: /\.jsx?$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env', '@babel/preset-react'],
+          },
+        },
+      },
+    ],
+  },
 };
