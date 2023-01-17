@@ -1,0 +1,30 @@
+
+  .App-logo {
+	height: 20vmin;
+	pointer-events: none;
+	align-self: left;
+	margin-left: -1300px;
+  }
+  
+  
+  .App-header h1{
+	display: inline;
+	margin-top: -200px !important;
+	font-size: 42px;
+	font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+  .App-header {
+	background-color: #fff;
+	display: flex;
+	align-items: center;
+	font-size: calc(10px + 2vmin);
+	color: red;
+	display: inline;
+  
+  }
+
+  .menu-item{
+    color:blue !important;
+    background-color: aqua !important;
+}
+  
