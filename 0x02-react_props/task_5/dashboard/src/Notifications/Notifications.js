@@ -23,8 +23,8 @@ export default function Notifications({displayDrawer, listNotifications }){
                     <button aria-label="Close" style={{ display: 'inline', left: '1830px', position: "relative"}} onClick={function(){console.log('Close button has been clicked')}} >
                         <img src={closeIcon} width="15px" height="15px" alt="close_icon"></img>
                     </button>
-                    {listNotifications ? (listNotifications.map((notif) => (
-                        <NotificationItem key={notif.id} type={notif.type} value={notif.value} html={notif.html} /> ))) : (<tr>No course available yet</tr>)}
+                    {listNotifications ? (listNotifications.map((notification) => (
+                        <NotificationItem key={notification.id} type={notification.type} value={notification.value} html={notification.html} /> ))) : (<tr>No course available yet</tr>)}
                 </div>
             }
         </React.Fragment>
