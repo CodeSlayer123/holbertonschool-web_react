@@ -1,6 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+const style = {
+
+}
 export default class CourseListRow extends React.Component {
   render() {
     if (this.props.isHeader) {
