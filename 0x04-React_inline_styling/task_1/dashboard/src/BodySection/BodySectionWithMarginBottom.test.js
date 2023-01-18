@@ -6,6 +6,11 @@ import BodySectionWithMarginBottom   from './BodySectionWithMarginBottom ';
 import { shallow } from 'enzyme';
 
 describe('Tests BodySectionWithMarginBottom', () => {
+
+    beforeEach(() => {
+        StyleSheetTestUtils.suppressStyleInjection();
+      });
+
       it('BodySectionWithMarginBottom renders without crashing', function(){
         const wrapper = shallow(<BodySectionWithMarginBottom title="test title"><p>test children node</p></BodySectionWithMarginBottom>)
         assert.equal(wrapper.length, 1);
