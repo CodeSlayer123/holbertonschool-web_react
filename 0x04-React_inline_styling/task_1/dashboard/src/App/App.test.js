@@ -5,6 +5,9 @@ import App from './App';
 import { shallow } from 'enzyme';
 
 describe('Tests app', () => {
+  beforeEach(() => {
+    StyleSheetTestUtils.suppressStyleInjection();
+  });
     describe('App renders without crashing', () => {
       it('App renders without crashing', function(){
         const wrapper = shallow(<App />);

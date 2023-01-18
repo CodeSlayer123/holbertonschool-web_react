@@ -15,7 +15,8 @@ import { StyleSheet, css } from 'aphrodite';
 
 
 const styles = StyleSheet.create({
-
+  body: {
+  },
   App: {
     textAlign: 'center'
   },
@@ -43,9 +44,10 @@ const styles = StyleSheet.create({
     borderTop: '3px solid rgb(247, 13, 13)',
     margin: '1em 0',
     padding: '0'
+    },
+
+    footer: {
     }
-
-
 
 });
 

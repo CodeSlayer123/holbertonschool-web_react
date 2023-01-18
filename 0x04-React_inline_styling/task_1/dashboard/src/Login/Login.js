@@ -11,7 +11,8 @@ const styles = StyleSheet.create({
       alignItems: 'left',
       display: 'inline',
       paddingRight: '1500px',
-      width: '100px'
+      width: '100px',
+      margin: '0px'
       },
   label: {
       alignItems: 'left',
