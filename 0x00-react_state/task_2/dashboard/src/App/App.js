@@ -64,11 +64,15 @@ const listNotifications = [
   { id: 3, type: 'urgent', html: { __html: getLatestNotification() } },
 ];
 class App extends React.Component {
+  static contextType = AppContext;
+
   constructor(props) {
+
     super(props);
     this.handleDisplayDrawer = this.handleDisplayDrawer.bind(this)
     this.handleHideDrawer = this.handleHideDrawer.bind(this)
     this.login = this.login.bind(this);
+    this.state.logout = this.state.logout.bind(this);
 
     this.state = {displayDrawer: false, user: AppContext._currentValue.user, logout: AppContext._currentValue.logout};
   }
