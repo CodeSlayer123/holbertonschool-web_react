@@ -123,59 +123,67 @@ class App extends React.Component {
 
     if (isLoggedIn == false){
       return (
-        <React.Fragment>
-            <Notifications 
-            listNotifications={listNotifications}
-            displayDrawer={this.state.displayDrawer} 
-            handleHideDrawer={this.handleHideDrawer}
-            handleDisplayDrawer={this.handleDisplayDrawer}/>
-            <div className= {css(styles.App)}>
-                  <Header />
-                  <hr className= {css(styles.hr)}/>
-                  <body className= {css(styles.AppBody)}>
-                  <BodySectionWithMarginBottom  title="Log in to continue">
-                      <Login login={this.login}/>
-                    </BodySectionWithMarginBottom >
-                  <BodySection title="News from the School">
-                    <p>To sure calm much most long me mean.
-                      Able rent long in do we.
-                      Uncommonly no it announcing melancholy an in.
-                      Mirth learn it he given.
-                      Secure shy favour length all twenty denote.
-                      He felicity no an at packages answered opinions juvenile.</p>
-                  </BodySection>
-                  </body>
-                  <hr className= {css(styles.hr)}/>
-                  <footer className= {css(styles.AppFooter)}>
-                      <Footer />
-                  </footer>
-            </div>
-        </React.Fragment>
+        <AppContext.Provider value={{user: this.state.user, logout: this.state.logout}}>
+
+          <React.Fragment>
+              <Notifications 
+              listNotifications={listNotifications}
+              displayDrawer={this.state.displayDrawer} 
+              handleHideDrawer={this.handleHideDrawer}
+              handleDisplayDrawer={this.handleDisplayDrawer}/>
+              <div className= {css(styles.App)}>
+                    <Header />
+                    <hr className= {css(styles.hr)}/>
+                    <body className= {css(styles.AppBody)}>
+                    <BodySectionWithMarginBottom  title="Log in to continue">
+                        <Login login={this.login}/>
+                      </BodySectionWithMarginBottom >
+                    <BodySection title="News from the School">
+                      <p>To sure calm much most long me mean.
+                        Able rent long in do we.
+                        Uncommonly no it announcing melancholy an in.
+                        Mirth learn it he given.
+                        Secure shy favour length all twenty denote.
+                        He felicity no an at packages answered opinions juvenile.</p>
+                    </BodySection>
+                    </body>
+                    <hr className= {css(styles.hr)}/>
+                    <footer className= {css(styles.AppFooter)}>
+                        <Footer />
+                    </footer>
+              </div>
+          </React.Fragment>
+        </AppContext.Provider>
+
       );
     }
     else{
       return (
-        <React.Fragment>
-            <Notifications
-            listNotifications={listNotifications}
-            displayDrawer={this.state.displayDrawer} 
-            handleHideDrawer={this.handleHideDrawer}
-            handleDisplayDrawer={this.handleDisplayDrawer} />
-            <div className={css(styles.App)}>
-                  <Header />
-                  <hr className= {css(styles.hr)}/>
-                  <body className= {css(styles.AppBody)}>
-                  <BodySectionWithMarginBottom title="Course list">
-                      <CourseList listCourses={listCourses} />
-                  </BodySectionWithMarginBottom>
+        <AppContext.Provider value={{user: this.state.user, logout: this.state.logout}}>
 
-                  </body>
-                  <hr className= {css(styles.hr)}/>
-                  <footer className={css(styles.AppFooter)}>
-                      <Footer />
-                  </footer>
-            </div>
-        </React.Fragment>
+          <React.Fragment>
+              <Notifications
+              listNotifications={listNotifications}
+              displayDrawer={this.state.displayDrawer} 
+              handleHideDrawer={this.handleHideDrawer}
+              handleDisplayDrawer={this.handleDisplayDrawer} />
+              <div className={css(styles.App)}>
+                    <Header />
+                    <hr className= {css(styles.hr)}/>
+                    <body className= {css(styles.AppBody)}>
+                    <BodySectionWithMarginBottom title="Course list">
+                        <CourseList listCourses={listCourses} />
+                    </BodySectionWithMarginBottom>
+
+                    </body>
+                    <hr className= {css(styles.hr)}/>
+                    <footer className={css(styles.AppFooter)}>
+                        <Footer />
+                    </footer>
+              </div>
+          </React.Fragment>
+        </AppContext.Provider>
+
     
       );
     }

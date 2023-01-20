@@ -2,6 +2,7 @@ import logo from '../assets/holberton_logo.jpg';
 import {getFullYear} from '../utils/utils.js';
 import {getFooterCopy} from '../utils/utils.js';
 import React from 'react';
+import AppContext from '../App/AppContext';
 
 
 import { StyleSheet, css } from 'aphrodite';
@@ -35,10 +36,17 @@ const styles = StyleSheet.create({
   });
 
 
-function App() {
+function Header() {
+  const context = React.useContext(AppContext);
+
   return (
     <header className= {css(styles.AppHeader)}>
-
+      {context.user.isLoggedIn === true &&
+        <div id='logoutSection'>
+            Welcome {context.user.email} <a onClick={context.logout} href="#">(logout)</a>
+        </div>
+      }
+        
         <img src={logo} className= {css(styles.AppLogo)} alt="logo" />
         <h1 classname={css(styles.h1)}>School dashboard</h1>
     </header>
@@ -47,4 +55,4 @@ function App() {
   );
 }
 
-export default App;
+export default Header;
