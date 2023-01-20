@@ -6,7 +6,7 @@ const user = {
     isLoggedIn: false
 }
 
-function logOut(){
+function logout(){
     this.setState({
         user: {
             email: "",
@@ -23,6 +23,6 @@ function logOut(){
     }
 }
 
-const AppContext = createContext({user, logOut})
+const AppContext = createContext({user, logout})
 
 export default AppContext

@@ -68,9 +68,9 @@ class App extends React.Component {
     super(props);
     this.handleDisplayDrawer = this.handleDisplayDrawer.bind(this)
     this.handleHideDrawer = this.handleHideDrawer.bind(this)
-    
+    this.login = this.login.bind(this);
 
-    this.state = {displayDrawer: false, user: AppContext._currentValue.user, logOut: AppContext._currentValue.logOut};
+    this.state = {displayDrawer: false, user: AppContext._currentValue.user, logout: AppContext._currentValue.logout};
   }
   handleDisplayDrawer(){
     this.setState({displayDrawer: true})
@@ -81,7 +81,7 @@ class App extends React.Component {
 
   }
 
-  logIn(email, password){
+  login(email, password){
     this.setState({
       user: {
         email: email,
@@ -91,7 +91,7 @@ class App extends React.Component {
     })
   }
 
-  logOut(){
+  logout(){
     this.setState({
       user: {
         email: '',
@@ -105,7 +105,7 @@ class App extends React.Component {
   eventListener = (event) => {
     if (event.ctrlKey && event.key == 'h'){
       alert('Logging you out')
-      this.state.logOut()
+      this.state.logout()
     }
   }
   componentDidMount(){
