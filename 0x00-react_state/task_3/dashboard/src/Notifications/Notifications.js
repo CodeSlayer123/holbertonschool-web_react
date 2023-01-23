@@ -83,7 +83,7 @@ export default class Notifications extends React.PureComponent {
                         <img className={css(styles.closeIcon)} src={closeIcon} width="15px" height="15px" alt="close_icon"></img>
                     </button>
                     {this.props.listNotifications ? (this.props.listNotifications.map((notification) => (
-                        <NotificationItem key={notification.id} type={notification.type} value={notification.value} html={notification.html} markNotificationAsRead={this.props.markNotificationAsRead}/> ))) : (<tr>No course available yet</tr>)}
+                        <NotificationItem key={notification.id} id={notification.id} type={notification.type} value={notification.value} html={notification.html} markNotificationAsRead={this.props.markNotificationAsRead}/> ))) : (<tr>No course available yet</tr>)}
                 </div>
             }
         </React.Fragment>

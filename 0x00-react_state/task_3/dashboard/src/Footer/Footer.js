@@ -20,7 +20,7 @@ function Footer() {
         <p><i><b>Copyright {getFullYear()} - {getFooterCopy(true)}</b></i></p>
         
         {user.isLoggedIn &&
-          <p><a href="#"></a>Contact us</p>}
+          <p><a href="#">Contact us</a></p>}
     </React.Fragment>
 
 

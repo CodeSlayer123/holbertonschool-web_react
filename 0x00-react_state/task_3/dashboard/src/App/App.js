@@ -111,7 +111,7 @@ class App extends React.Component {
 
   markNotificationAsRead(id){
 
-    newListNotifications = this.state.listNotifications.filter(function(notification) {
+    let newListNotifications = this.state.listNotifications.filter(function(notification) {
       return notification.id !== id
   })
 
@@ -183,11 +183,12 @@ class App extends React.Component {
         <AppContext.Provider value={{user: this.state.user, logout: this.state.logout}}>
 
           <React.Fragment>
-              <Notifications
-              listNotifications={listNotifications}
+          <Notifications 
+              listNotifications={this.state.listNotifications}
               displayDrawer={this.state.displayDrawer} 
               handleHideDrawer={this.handleHideDrawer}
-              handleDisplayDrawer={this.handleDisplayDrawer} />
+              handleDisplayDrawer={this.handleDisplayDrawer}
+              markNotificationAsRead={this.markNotificationAsRead}/>
               <div className={css(styles.App)}>
                     <Header />
                     <hr className= {css(styles.hr)}/>

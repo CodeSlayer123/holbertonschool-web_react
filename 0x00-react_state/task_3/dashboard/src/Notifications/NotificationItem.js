@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
   });
 
 
- function NotificationItem({markAsRead, type, value, html, id}){
+ function NotificationItem({markNotificationAsRead, type, value, html, id}){
     if (value){
         return(
             <li className={css(type == "default" ? styles.default : styles.urgent)} data-priority={type} onClick={() => markNotificationAsRead(id)}>
