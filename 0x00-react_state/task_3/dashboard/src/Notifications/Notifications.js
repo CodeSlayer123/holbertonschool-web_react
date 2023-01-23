@@ -72,9 +72,9 @@ export default class Notifications extends React.PureComponent {
             <div className= {css(styles.menuItem)} style={{'padding-left': '1700px'}}>
                 <div classname='notifs'onClick={this.props.handleDisplayDrawer}>Your notifications</div>
             </div>
-            {displayDrawer ==true &&
+            {this.props.displayDrawer ==true &&
                 <div class= {css(styles.Notifications)}>
-                    {listNotifications.length ? (
+                    {this.props.listNotifications.length ? (
                         <p>Here is the list of notifications</p>
                     ) : (
                         <p>No new notification for now</p>
@@ -82,7 +82,7 @@ export default class Notifications extends React.PureComponent {
                     <button className='close'aria-label="Close" style={{ display: 'inline', bottom: '50px', left: '465px', position: "relative"}} onClick={this.props.handleHideDrawer} >
                         <img className={css(styles.closeIcon)} src={closeIcon} width="15px" height="15px" alt="close_icon"></img>
                     </button>
-                    {listNotifications ? (listNotifications.map((notification) => (
+                    {this.props.listNotifications ? (this.props.listNotifications.map((notification) => (
                         <NotificationItem key={notification.id} type={notification.type} value={notification.value} html={notification.html} markNotificationAsRead={this.props.markNotificationAsRead}/> ))) : (<tr>No course available yet</tr>)}
                 </div>
             }
@@ -110,4 +110,3 @@ Notifications.defaultProps = {
     markNotificationAsRead: (id) => console.log(`Notification ${id} has been marked as read`)
 
 };
-
