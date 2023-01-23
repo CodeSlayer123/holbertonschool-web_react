@@ -33,46 +33,37 @@ const styles = StyleSheet.create({
 
 
 });
-export default class CourseListRow extends React.Component {
+const CourseListRow = ({isHeader, textFirstCell, textSecondCell}) => {
   
-  render() {
-    const [isChecked, setChecked] = useState(false);
+    const [checked, setChecked] = useState(false);
 
-    const handleChecked = () => {
-      setChecked(!isChecked);
-    };
-    if (this.props.isHeader) {
-      if (this.props.textSecondCell) {
+    if (isHeader) {
+      if (textSecondCell) {
         return (
           <tr style={{ 'background-color': '#deb5b545'}}>
-            <th className= {css(styles.rowHeader1)}>{this.props.textFirstCell}</th>
-            <th className= {css(styles.rowHeader2)}>{this.props.textSecondCell}</th>
+            <th className= {css(styles.rowHeader1)}>{textFirstCell}</th>
+            <th className= {css(styles.rowHeader2)}>{textSecondCell}</th>
           </tr>
         );
       } else {
         return (
           <tr>
-            <th className= {css(styles.tableHeader)} colSpan="2">{this.props.textFirstCell}</th>
+            <th className= {css(styles.tableHeader)} colSpan="2">{textFirstCell}</th>
           </tr> );
       }
     } else {
       return (
-        <tr style={{ 'background-color': '#f5f5f5ab' }} className={isChecked ? css(styles.rowChecked) : ''}>
-          <td className= {css(styles.data1)}>{this.props.textFirstCell}</td>
-          <td className= {css(styles.data2)}>{this.props.textSecondCell}</td>
-          
-          <td>
-          <input
-              type="checkbox"
-              checked={isChecked}
-              onChange={handleChecked}
-            />
-            
-          </td>
+        <tr style={{ 'background-color': '#f5f5f5ab' }} className={checked ? css(styles.rowChecked) : ''}>
+
+          <td className= {css(styles.data1)}>
+            <input type="checkbox" checked={checked} onChange={() => {setChecked(!checked)}}/>
+            {textFirstCell}</td>
+          <td className= {css(styles.data2)}>{textSecondCell}</td>
+
         </tr>
       );
     }
-  }
+
 }
 
 
@@ -86,3 +77,5 @@ CourseListRow.defaultProps = {
   isHeader: false,
   textSecondCell: null
 };
+
+export default CourseListRow
