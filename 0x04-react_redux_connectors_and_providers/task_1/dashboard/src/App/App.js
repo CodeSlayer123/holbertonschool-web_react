@@ -139,7 +139,7 @@ export default class App extends React.Component {
               <Notifications 
               listNotifications={this.state.listNotifications}
               displayDrawer={this.props.displayDrawer} 
-              handleHideDrawer={this.props.hideNotificationsDrawer}
+              handleHideDrawer={this.props.hideNotificationDrawer}
               handleDisplayDrawer={this.props.displayNotificationDrawer}
               markNotificationAsRead={this.markNotificationAsRead}/>
               <div className= {css(styles.App)}>
@@ -176,7 +176,7 @@ export default class App extends React.Component {
           <Notifications 
               listNotifications={this.state.listNotifications}
               displayDrawer={this.props.displayDrawer} 
-              handleHideDrawer={this.props.hideNotificationsDrawer}
+              handleHideDrawer={this.props.hideNotificationDrawer}
               handleDisplayDrawer={this.props.displayNotificationDrawer}
               markNotificationAsRead={this.markNotificationAsRead}/>
               <div className={css(styles.App)}>
