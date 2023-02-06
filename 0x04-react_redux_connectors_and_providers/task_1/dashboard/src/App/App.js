@@ -231,7 +231,7 @@ export const mapDispatchToProps = (dispatch) => {
     hideNotificationDrawer: () => dispatch(uiActions.hideNotificationDrawer()),
   }
 }
-export const ReduxApp = connect(mapStateToProps, mapDispatchToProps, null, { context: AppContext })(App);
+export const ConnectedApp = connect(mapStateToProps, mapDispatchToProps)(App);
 
 
 export default App;

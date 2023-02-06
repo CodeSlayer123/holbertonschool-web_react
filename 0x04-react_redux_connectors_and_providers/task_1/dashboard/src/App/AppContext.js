@@ -2,13 +2,6 @@ import React, { createContext } from 'react';
 import { configureStore } from '@reduxjs/toolkit';
 import uiReducer from '../reducers/uiReducer';
 
-export const store = configureStore({
-    reducer: uiReducer,
-    preloadedState: {
-      ui: uiReducer(undefined, {}),
-    },
-  });
-
 const user = {
     email: "",
     password: "",
@@ -31,6 +24,13 @@ function logout(){
 
     }
 }
+
+export const store = configureStore({
+    reducer: uiReducer,
+    preloadedState: {
+      ui: uiReducer(undefined, {}),
+    },
+  });
 
 const AppContext = createContext({user, logout, store})
 

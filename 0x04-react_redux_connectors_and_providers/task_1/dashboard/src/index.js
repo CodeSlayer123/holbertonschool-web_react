@@ -1,9 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App/App';
-import { ReduxApp } from './App/App';
-import { configureStore } from '@reduxjs/toolkit';
-import uiReducer from './reducers/uiReducer';
+import { ConnectedApp } from './App/App';
 import { Provider } from 'react-redux';
 //import Notifications from './Notifications/Notifications';
 import {store} from './App/AppContext'
@@ -13,7 +11,7 @@ ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
 
-        <ReduxApp />
+        <ConnectedApp />
     </Provider>
 
   </React.StrictMode>,
