@@ -65,7 +65,7 @@ const listNotifications = [
   { id: 2, type: 'urgent', value: 'New resume available' },
   { id: 3, type: 'urgent', html: { __html: getLatestNotification() } },
 ];
-class App extends React.Component {
+export default class App extends React.Component {
   static contextType = AppContext;
 
 
@@ -205,12 +205,12 @@ class App extends React.Component {
 }
 App.propTypes = {
   isLoggedIn: PropTypes.bool,
-  displayDrawer: PropTypes.bool
+  // displayDrawer: PropTypes.bool
 };
 
 App.defaultProps = {
   isLoggedIn: false,
-  displayDrawer: false
+  // displayDrawer: false
 
 };
 export function mapStateToProps(state){
@@ -228,7 +228,8 @@ export const mapDispatchToProps = (dispatch) => {
     hideNotificationDrawer: () => dispatch(uiActions.hideNotificationDrawer()),
   }
 }
+export const ReduxApp = connect(mapStateToProps, mapDispatchToProps, null, { context: AppContext })(App);
 
-connect(mapStateToProps, mapDispatchToProps, uiActions)(App)
+//connect(mapStateToProps, mapDispatchToProps, uiActions)(App)
 
-export default App;
+//export default App;
