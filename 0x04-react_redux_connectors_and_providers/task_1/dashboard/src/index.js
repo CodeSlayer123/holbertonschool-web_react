@@ -2,22 +2,20 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App/App';
 import { ReduxApp } from './App/App';
-
-//import { configureStore } from '@reduxjs/toolkit'
-//import { combineReducers } from 'redux';
-//import { uiReducer as ui } from './reducers/uiReducer';
-//import { courseReducer as course } from './reducers/courseReducer';
-//import { notificationReducer as notifications } from './reducers/notificationReducer';
-//import { Provider } from 'react-redux';
-
+import { configureStore } from '@reduxjs/toolkit';
+import uiReducer from './reducers/uiReducer';
+import { Provider } from 'react-redux';
 //import Notifications from './Notifications/Notifications';
+import {store} from './App/AppContext'
 
-//const store = configureStore({ reducer: combineReducers({ui, course, notifications})})
 
 ReactDOM.render(
   <React.StrictMode>
+    <Provider store={store}>
 
         <ReduxApp />
+    </Provider>
+
   </React.StrictMode>,
   document.getElementById('root')
 );

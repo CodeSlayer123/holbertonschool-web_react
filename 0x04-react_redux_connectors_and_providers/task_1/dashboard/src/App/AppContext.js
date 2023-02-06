@@ -2,14 +2,13 @@ import React, { createContext } from 'react';
 import { configureStore } from '@reduxjs/toolkit';
 import uiReducer from '../reducers/uiReducer';
 
-const store = configureStore({
+export const store = configureStore({
     reducer: uiReducer,
     preloadedState: {
       ui: uiReducer(undefined, {}),
     },
-    middleware: (getDefault) => getDefault({ serializableCheck: false })
   });
-  
+
 const user = {
     email: "",
     password: "",
