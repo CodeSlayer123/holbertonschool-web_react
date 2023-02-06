@@ -77,6 +77,9 @@ export default class App extends React.Component {
     this.login = this.login.bind(this);
     this.state.logout = this.state.logout.bind(this);
     this.markNotificationAsRead = this.markNotificationAsRead.bind(this);
+
+    this.state.user.isLoggedIn = this.props.isLoggedIn;
+
   }
  
   login(email, password){
