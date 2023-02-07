@@ -12,16 +12,10 @@ export function uiReducer(state = initialState, action){
 
     switch (action.type) {
         case DISPLAY_NOTIFICATION_DRAWER: {
-          return {
-            ...state,
-            ui: state.ui.set('isNotificationDrawerVisible', true)
-          }
+          return state.set('isNotificationDrawerVisible', true)
         }
         case HIDE_NOTIFICATION_DRAWER: {
-          return {
-            ...state,
-            ui: state.ui.set('isNotificationDrawerVisible', false)
-          }
+          return state.set('isNotificationDrawerVisible', false)
           }
           case LOGIN_SUCCESS: {
             return {
